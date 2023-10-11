@@ -19,11 +19,7 @@ class Router
         return self::$route;
     }
 
-    /**
-     * Ищет Url в таблице маршруты
-     * @param $url входящий url
-     * @return bool
-     */
+
     public static function matchRoute($url){
         foreach (self::$routes as $pattern => $route)
         {
@@ -60,6 +56,7 @@ class Router
               $action = self::lowerCamelCase(self::$route['action']) . 'Action';
               if (method_exists($cObj, $action)) {
                   $cObj -> $action();
+                  $cObj -> getView();
               } else{
                   echo "Метод <b>$controller::$action</b> не найден";
               }
