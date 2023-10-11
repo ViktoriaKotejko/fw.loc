@@ -52,6 +52,7 @@ class Router
      * @param string $url входящий URL
      */
     public static function dispatch($url){
+        $url = self::removeQueryString($url);
         if(self::matchRoute($url)){
             $controller ='app\controllers\\' . self::$route['controller'];
            if (class_exists($controller)) {
@@ -71,14 +72,23 @@ class Router
         }
     }
 
-    protected static function upperCamelCase($name)
-    {
+    protected static function upperCamelCase($name){
         return str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));
     }
 
-    protected static function lowerCamelCase($name)
-    {
+    protected static function lowerCamelCase($name){
         return lcfirst(self::upperCamelCase($name));
+    }
+
+    protected static function removeQueryString($url){
+        if ($url){
+            $params = explode('&',$url, 2);
+            if (false === strpos($params[0],'=')){
+                return rtrim($params[0], '/');
+            }else{
+                return '';
+            }
+        }
     }
 
 }
