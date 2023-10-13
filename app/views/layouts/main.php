@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,12 +8,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/main.css">
 
-    <title>Template</title>
+    <title>MAIN</title>
 </head>
 <body>
-    <h1>Hello world</h1>
+    <h1>Main</h1>
     <?= $content ?>
 
 
