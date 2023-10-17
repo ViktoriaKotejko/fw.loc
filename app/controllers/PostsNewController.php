@@ -2,7 +2,9 @@
 
 namespace app\controllers;
 
-class PostsNew extends App
+use vendor\core\base\Controller;
+
+class PostsNewController extends AppController
 {
 
 

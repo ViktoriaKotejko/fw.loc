@@ -12,8 +12,10 @@
     <title>Template</title>
 </head>
 <body>
-    <h1>Hello world</h1>
+
     <?= $content ?>
+    <?=debug(\vendor\core\Db::$countsql)?>
+    <?=debug(\vendor\core\Db::$queries)?>
 
 
 <script src = "/bootstrap/js/bootstrap.js"></script>
