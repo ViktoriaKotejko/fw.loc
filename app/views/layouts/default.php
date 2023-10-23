@@ -12,6 +12,14 @@
     <title>Template</title>
 </head>
 <body>
+    <div class="container">
+        <ul class="nav nav-pills">
+             <?php foreach ($menu as  $item): ?>
+                <li><a href="category/<?= $item['id'] ?>"> <?= $item['title'] ?></a></li>
+             <?php endforeach; ?>
+        </ul>
+        <h1>Hello, world!</h1>
+    </div>
 
     <?= $content ?>
     <?=debug(\vendor\core\Db::$countsql)?>

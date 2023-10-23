@@ -3,6 +3,7 @@
 require 'rb.php';
 $db = require '../config/config_db.php';
 R::setup($db['dns'], $db['user'], $db['pass']);
+R::freeze(true);
 R::fancyDebug(TRUE);
 //R::freeze(true);
 
@@ -40,8 +41,8 @@ R::store($cat);*/
 //$cats = R::findAll('category');
 //$cats = R::findAll('category', 'id > ?', [2]);
 //$cats = R::findAll('category', 'title like ?', ['%Кат%']);
-
-echo '<pre>';
-print_r($cats);
+//
+//echo '<pre>';
+//print_r($cats);
 
 
