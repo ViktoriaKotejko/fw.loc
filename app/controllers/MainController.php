@@ -11,7 +11,7 @@ class MainController extends AppController
 
     public function indexAction(){
 
-        \R::fancyDebug(true);
+       // \R::fancyDebug(true);
 //        App::$app->getList();
         $model = new Main();
         $posts = App::$app->cache->get('posts');
